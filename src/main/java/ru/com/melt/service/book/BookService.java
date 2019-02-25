@@ -10,4 +10,6 @@ import ru.com.melt.service.EntityService;
 public interface BookService extends EntityService<Book> {
 
     void insert(@NonNull Book book, @NonNull Author author, Genre genre, Comment comment);
+
+    void insert(@NonNull Book book);
 }

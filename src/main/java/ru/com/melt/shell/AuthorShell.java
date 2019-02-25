@@ -25,7 +25,7 @@ public class AuthorShell {
         return authorService.count();
     }
 
-    @ShellMethod(key = { "author_id" }, value = "Author get by id")
+    @ShellMethod(key = { "author_get" }, value = "Author get by id")
     public String authorGetByUd(@ShellOption Long id) {
         return authorService.getById(id).toString();
     }

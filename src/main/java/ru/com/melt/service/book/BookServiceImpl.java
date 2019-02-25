@@ -56,6 +56,10 @@ public class BookServiceImpl implements BookService {
 
         bookRepository.insert(book);
     }
+    @Override
+    public void insert(@NonNull Book book) {
+        bookRepository.insert(book);
+    }
 
     @Override
     public void deleteById(long id) {

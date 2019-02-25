@@ -31,9 +31,13 @@ public class BookShell {
         return bookService.getById(id).toString();
     }
 
-    @ShellMethod("Book insert")
-    public void bookInsert(@ShellOption String[] var) {
-        //TODO implement
+    @ShellMethod(key = { "book_add" }, value = "Book get by id")
+    public void bookInsert(@ShellOption String name, @ShellOption String description) {
+        Book book = new Book();
+        book.setName(name);
+        book.setDescription(description);
+
+        bookService.insert(book);
     }
 
     @ShellMethod(key = { "book_list" }, value = "Book get by id")
