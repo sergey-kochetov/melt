@@ -1,4 +1,4 @@
-package ru.com.melt;
+package ru.com.melt.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,21 +8,20 @@ import org.springframework.web.bind.annotation.RequestParam;
 import ru.com.melt.domain.Message;
 import ru.com.melt.repos.MessageRepo;
 
-import java.util.List;
 import java.util.Map;
 
 @Controller
-public class GreetingController {
+public class MainController {
     @Autowired
     private MessageRepo messageRepo;
 
-    @GetMapping("/greeting")
-    public String greeting(
+    @GetMapping("/hello")
+    public String hello(
             @RequestParam(name="name", required=false, defaultValue="World") String name,
             Map<String, Object> model
     ) {
         model.put("name", name);
-        return "greeting";
+        return "hello";
     }
 
     @GetMapping("/")
