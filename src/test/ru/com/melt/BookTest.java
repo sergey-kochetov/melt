@@ -9,7 +9,9 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.test.context.junit4.SpringRunner;
 import ru.com.melt.domain.Author;
+import ru.com.melt.domain.Book;
 import ru.com.melt.repos.AuthorRepositoryJdbc;
+import ru.com.melt.repos.BookRepositoryJdbc;
 
 import static org.junit.Assert.assertEquals;
 
@@ -17,10 +19,10 @@ import static org.junit.Assert.assertEquals;
 @DataJpaTest
 @AutoConfigureTestDatabase(connection = EmbeddedDatabaseConnection.H2)
 @ComponentScan("ru.com.melt")
-public class AuthorTest {
+public class BookTest {
 
     @Autowired
-    private AuthorRepositoryJdbc jdbc;
+    private BookRepositoryJdbc jdbc;
 
     @Test
     public void whenCallCount_thenReturnOne() {
@@ -37,16 +39,16 @@ public class AuthorTest {
     @Test
     public void whenCallGetById_thenReturnAuthor() {
         //given
-        String firstName = "firstName";
-        String secondName = "secondName";
+        String name = "book1";
+        String description = "description1";
 
         // when
-        Author findAuthor = jdbc.getById(1L);
+        Book findBook = jdbc.getById(1L);
 
         // then
         //System.out.println(findAuthor.toString());
-        assertEquals(firstName, findAuthor.getFirstName());
-        assertEquals(secondName, findAuthor.getSecondName());
+        assertEquals(name, findBook.getName());
+        assertEquals(description, findBook.getDescription());
     }
 
     @Test
@@ -65,19 +67,21 @@ public class AuthorTest {
     @Test
     public void whenCallInsert_thenOk() {
         //given
-        Long actual = 1L;
-        Author author = new Author();
-        author.setFirstName("firstName2");
-        author.setSecondName("secondName2");
+        Long actual = 2L;
+        Book book = new Book();
+        book.setName("serg");
+        book.setDescription("hello");
+
 
         // when
-        jdbc.insert(author);
+        jdbc.insert(book);
         Long expected = jdbc.count();
 
         // then
-        assertEquals(
-                "[Author{id=1, firstName='firstName', secondName='secondName'}, " +
-                "Author{id=2, firstName='firstName2', secondName='secondName2'}]",
+        assertEquals("[Book{id=1, name='book1'}, " +
+                        "Book{id=2, name='serg'}]",
                 jdbc.getAll().toString());
+
+        assertEquals(actual, expected);
     }
 }

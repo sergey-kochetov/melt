@@ -1,4 +1,4 @@
-package ru.com.melt.repos.author;
+package ru.com.melt.repos;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -10,7 +10,7 @@ import java.util.List;
 
 @Repository
 @Transactional
-public class AuthorRepositoryJdbc implements AuthorRepository {
+public class AuthorRepositoryJdbc implements EntityRepository<Author> {
 
     @PersistenceContext
     private EntityManager manager;

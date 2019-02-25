@@ -32,7 +32,7 @@ public class AuthorShell {
 
     @ShellMethod(key = { "author_list" }, value ="Author list")
     public String authorList() {
-        List<Author> allAuthor = authorService.getAllAuthor();
+        List<Author> allAuthor = authorService.getAll();
         return StringUtils.collectionToDelimitedString(
                 allAuthor, System.lineSeparator());
     }

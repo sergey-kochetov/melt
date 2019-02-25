@@ -4,22 +4,23 @@ import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.com.melt.domain.Author;
-import ru.com.melt.repos.author.AuthorRepository;
+import ru.com.melt.repos.AuthorRepositoryJdbc;
+import ru.com.melt.service.EntityService;
 
 import java.util.List;
 
 @Service
 public class AuthorServiceImpl implements AuthorService {
 
-    private final AuthorRepository authorRepository;
+    private final AuthorRepositoryJdbc authorRepository;
 
     @Autowired
-    public AuthorServiceImpl(AuthorRepository authorRepository) {
+    public AuthorServiceImpl(AuthorRepositoryJdbc authorRepository) {
         this.authorRepository = authorRepository;
     }
 
     @Override
-    public long count() {
+    public Long count() {
         return authorRepository.count();
     }
 
@@ -29,7 +30,7 @@ public class AuthorServiceImpl implements AuthorService {
     }
 
     @Override
-    public List<Author> getAllAuthor() {
+    public List<Author> getAll() {
         return authorRepository.getAll();
     }
 
