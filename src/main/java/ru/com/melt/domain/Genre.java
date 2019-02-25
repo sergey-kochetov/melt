@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 @Entity
 @Data
-@Table(name = "genre")
+@Table(name = "genre_table")
 public class Genre implements Serializable {
 
     @Id

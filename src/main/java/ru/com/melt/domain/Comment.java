@@ -9,6 +9,7 @@ import java.util.Set;
 
 @Entity
 @Data
+@Table(name = "comment_table")
 public class Comment implements Serializable {
 
     @Id
