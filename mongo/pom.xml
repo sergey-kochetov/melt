@@ -51,9 +51,9 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.projectlambok</groupId>
-            <artifactId>lambok</artifactId>
-            <version>1.16.18</version>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.0</version>
         </dependency>
     </dependencies>
 
