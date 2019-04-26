@@ -16,11 +16,6 @@ import org.slf4j.LoggerFactory;
 
 import net.devstudy.ishop.util.UrlUtils;
 
-/**
- * 
- * @author devstudy
- * @see http://devstudy.net
- */
 public abstract class AbstractFilter implements Filter {
 	protected final Logger LOGGER = LoggerFactory.getLogger(getClass());
 	@Override

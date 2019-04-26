@@ -1,10 +1,5 @@
 package net.devstudy.ishop.util;
 
-/**
- * 
- * @author devstudy
- * @see http://devstudy.net
- */
 public class UrlUtils {
 
 	public static boolean isAjaxUrl(String url) {

@@ -11,11 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 
 import net.devstudy.ishop.Constants;
 
-/**
- * 
- * @author devstudy
- * @see http://devstudy.net
- */
 @WebListener
 @SuppressWarnings("unchecked")
 public class AccountRequestStatisticsListener implements ServletRequestListener {

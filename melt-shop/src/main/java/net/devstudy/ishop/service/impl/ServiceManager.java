@@ -9,11 +9,6 @@ import javax.servlet.ServletContext;
 import net.devstudy.ishop.service.OrderService;
 import net.devstudy.ishop.service.ProductService;
 
-/**
- * 
- * @author devstudy
- * @see http://devstudy.net
- */
 public class ServiceManager {
 	public static ServiceManager getInstance(ServletContext context) {
 		ServiceManager instance = (ServiceManager) context.getAttribute("SERVICE_MANAGER");

@@ -13,11 +13,6 @@ import net.devstudy.ishop.model.ShoppingCart;
 import net.devstudy.ishop.model.ShoppingCartItem;
 import net.devstudy.ishop.util.SessionUtils;
 
-/**
- * 
- * @author devstudy
- * @see http://devstudy.net
- */
 @WebFilter(filterName="AutoRestoreShoppingCartFilter")
 public class AutoRestoreShoppingCartFilter extends AbstractFilter {
 	private static final String SHOPPING_CARD_DESERIALIZATION_DONE = "SHOPPING_CARD_DESERIALIZATION_DONE";

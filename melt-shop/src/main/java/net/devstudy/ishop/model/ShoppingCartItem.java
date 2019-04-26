@@ -2,11 +2,6 @@ package net.devstudy.ishop.model;
 
 import java.io.Serializable;
 
-/**
- * 
- * @author devstudy
- * @see http://devstudy.net
- */
 public class ShoppingCartItem implements Serializable {
 	private static final long serialVersionUID = 6436798264138502851L;
 	private int idProduct;

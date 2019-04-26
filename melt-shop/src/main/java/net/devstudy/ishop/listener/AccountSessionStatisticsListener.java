@@ -8,11 +8,6 @@ import javax.servlet.http.HttpSessionListener;
 
 import net.devstudy.ishop.Constants;
 
-/**
- * 
- * @author devstudy
- * @see http://devstudy.net
- */
 @WebListener
 @SuppressWarnings("unchecked")
 public class AccountSessionStatisticsListener implements HttpSessionListener {

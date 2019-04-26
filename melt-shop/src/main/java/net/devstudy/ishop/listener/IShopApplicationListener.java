@@ -9,11 +9,6 @@ import org.slf4j.LoggerFactory;
 
 import net.devstudy.ishop.service.impl.ServiceManager;
 
-/**
- * 
- * @author devstudy
- * @see http://devstudy.net
- */
 @WebListener
 public class IShopApplicationListener implements ServletContextListener {
 	private static final Logger LOGGER = LoggerFactory.getLogger(IShopApplicationListener.class);

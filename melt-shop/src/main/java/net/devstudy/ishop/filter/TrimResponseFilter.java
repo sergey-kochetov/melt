@@ -13,11 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpServletResponseWrapper;
 
-/**
- * 
- * @author devstudy
- * @see http://devstudy.net
- */
 @WebFilter(filterName="TrimResponseFilter")
 public class TrimResponseFilter extends AbstractFilter {
 
