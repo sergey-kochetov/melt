@@ -9,6 +9,8 @@ public final class Constants {
 
     public static final String ACCOUNT_ACTIONS_HISTORY = "ACCOUNT_ACTIONS_HISTORY";
 
+    public static final int MAX_PRODUCTS_PER_HTML_PAGE = 12;
+
     public enum Cookie {
         //1 year ttl
         SHOPPING_CART("iSCC", 60 * 60 * 24 * 365);
