@@ -1,5 +1,7 @@
 package com.melt.shop.service.impl;
 
+import com.melt.shop.entity.Category;
+import com.melt.shop.entity.Producer;
 import com.melt.shop.entity.Product;
 import com.melt.shop.exception.InternalServerErroeException;
 import com.melt.shop.jdbc.JDBCUtils;
@@ -17,7 +19,11 @@ class ProductServiceImpl implements ProductService {
     private static final ResultSetHandler<List<Product>> productsResultSetHandler =
             ResultSetHandlerFactory.getListResultSetHandler(ResultSetHandlerFactory.PRODUCT_RESULT_SET_HANDLER);
 
-    private DataSource dataSource;
+    private final DataSource dataSource;
+
+    ProductServiceImpl(DataSource dataSource) {
+        this.dataSource = dataSource;
+    }
 
     @Override
     public List<Product> listAllProducts(int page, int limit) {
@@ -28,5 +34,20 @@ class ProductServiceImpl implements ProductService {
         } catch (SQLException e) {
             throw new InternalServerErroeException("Can't execute sql query: " + e.getMessage(), e);
         }
+    }
+
+    @Override
+    public List<Product> listProductsByCategory(String categoryUrl, int page, int limit) {
+        return null;
+    }
+
+    @Override
+    public List<Category> listAllCategories() {
+        return null;
+    }
+
+    @Override
+    public List<Producer> listAllProducers() {
+        return null;
     }
 }

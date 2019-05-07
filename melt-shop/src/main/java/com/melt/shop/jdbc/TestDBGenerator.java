@@ -133,7 +133,7 @@ public class TestDBGenerator {
     private static Map<String, Integer> insertProducers(Connection c, List<Producer> producers) throws Exception {
         Map<String, Integer> idMap = new HashMap<>();
         int i = 1;
-        try (PreparedStatement ps = c.prepareStatement("insert into producer values (?,?,?)")) {
+        try (PreparedStatement ps = c.prepareStatement("insert into producer(id, name, product_count) values (?,?,?)")) {
             for (Producer producer : producers) {
                 idMap.put(producer.name, i);
                 ps.setInt(1, i++);
